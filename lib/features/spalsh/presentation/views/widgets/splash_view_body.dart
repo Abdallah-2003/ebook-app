@@ -1,3 +1,4 @@
+import 'package:ebook_app/core/utils/assets_data.dart';
 import 'package:flutter/material.dart';
 
 class SplashViewBody extends StatelessWidget {
@@ -9,11 +10,16 @@ class SplashViewBody extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Image.asset('assets/images/logo.png',
-          width: 150,
-          height: 150,
-          
-        )
+        Center(
+          child: ClipRRect(
+            borderRadius: BorderRadiusGeometry.circular(20),
+            child: Image.asset(AssetsData.logo,
+              width: 150,
+              height: 150,
+              fit: BoxFit.fill,
+            ),
+          ),
+        ),
       ],
     );
   }
