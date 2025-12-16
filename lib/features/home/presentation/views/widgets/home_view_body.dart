@@ -1,4 +1,5 @@
 import 'package:ebook_app/core/utils/styles.dart';
+import 'package:ebook_app/features/home/presentation/views/widgets/best_seller_listview_item.dart';
 import 'package:ebook_app/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:ebook_app/features/home/presentation/views/widgets/featured_book_list_view.dart';
 import 'package:flutter/material.dart';
@@ -23,8 +24,9 @@ class HomeViewBody extends StatelessWidget {
             height: 20,
           ),
           Text('Best Seller',
-           style: Styles.titleMedium,
-          )
+           style: Styles.textStyle18,
+          ),
+          BestSellerListviewItem()
         ],
       ),
     );
