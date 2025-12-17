@@ -33,6 +33,7 @@ dependencies:
     sdk: flutter
   get: ^4.7.3
   google_fonts: ^6.3.3
+  font_awesome_flutter: ^10.12.0
 
 dev_dependencies:
   flutter_lints: ^5.0.0
@@ -60,10 +61,13 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+  
   fonts:
     - family: Spectral
       fonts:
-        - asset: assets/fonts/
+        - asset: assets/fonts/Spectral/Spectral-Regular.ttf
+        - asset: assets/fonts/Spectral/Spectral-Bold.ttf
+
     
   #
   # For details regarding fonts from package dependencies,
