@@ -1,4 +1,5 @@
 import 'package:ebook_app/core/utils/styles.dart';
+import 'package:ebook_app/features/home/presentation/views/widgets/book_rateing.dart';
 import 'package:ebook_app/features/home/presentation/views/widgets/custom_book_details_view_appbar.dart';
 import 'package:ebook_app/features/home/presentation/views/widgets/custom_book_item.dart';
 import 'package:flutter/material.dart';
@@ -34,6 +35,14 @@ class BookDetailsViewBody extends StatelessWidget {
             child: Text(
               'Rudyard Kipling',
               style: Styles.textStyle18,
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.only(
+              top: 6
+            ),
+            child: BookRateing(
+              mainAxisAlignment: MainAxisAlignment.center,
             ),
           )
         ],
