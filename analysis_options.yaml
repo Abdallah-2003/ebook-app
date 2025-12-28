@@ -56,7 +56,7 @@ linter:
     # IMPORT RULES
     # ------------------------------
     always_use_package_imports: true
-    directives_ordering: true
+    directives_ordering: false
     sort_pub_dependencies: true
 
     # ------------------------------

@@ -26,7 +26,8 @@ class BestSellerListviewItem extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                   color: Colors.red,
                   image: const DecorationImage(
-                    image: AssetImage(AssetsData.logo))
+                    image: AssetImage(AssetsData.logo),
+                  ),
                 ),
               ),
             ),
@@ -44,25 +45,22 @@ class BestSellerListviewItem extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
-                  const Text(
-                    'J.K. Rowling',
-                    style: Styles.textStyle14,
-                  ),
+                  const Text('J.K. Rowling', style: Styles.textStyle14),
                   Row(
                     children: [
                       Text(
                         '19.99 C',
                         style: Styles.textStyle20.copyWith(
-                          fontWeight: FontWeight.bold
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                       const Spacer(),
-                      const BookRateing()
+                      const BookRateing(),
                     ],
-                  )
+                  ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

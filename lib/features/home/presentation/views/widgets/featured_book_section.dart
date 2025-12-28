@@ -12,18 +12,11 @@ class FeaturedBookSection extends StatelessWidget {
         children: [
           Align(
             alignment: AlignmentGeometry.centerLeft,
-            child: Text(
-              'You can also like',
-              style: Styles.textStyle18,
-            ),
+            child: Text('You can also like', style: Styles.textStyle18),
           ),
-          SizedBox(
-            height: 10,
-          ),
+          SizedBox(height: 10),
           SimiliarFeaturedBookListView(),
-          SizedBox(
-            height: 20,
-          )
+          SizedBox(height: 20),
         ],
       ),
     );
