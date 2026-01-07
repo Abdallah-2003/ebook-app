@@ -19,7 +19,7 @@ class HomeRepoImplementation implements HomeRepo {
       
       final List<BooksModel> books = [];
       for (final element in data['items']) {
-        books.add(element);
+        books.add(BooksModel.fromJson(element));
       }
       
       return right(books);
@@ -41,7 +41,7 @@ class HomeRepoImplementation implements HomeRepo {
       
       final List<BooksModel> books = [];
       for (final element in data['items']) {
-        books.add(element);
+        books.add(BooksModel.fromJson(element));
       }
       
       return right(books);

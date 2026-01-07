@@ -1,6 +1,4 @@
-import 'package:dio/dio.dart';
 import 'package:ebook_app/constant.dart';
-import 'package:ebook_app/core/utils/api_service.dart';
 import 'package:ebook_app/core/utils/app_router.dart';
 import 'package:ebook_app/core/utils/service_locator.dart';
 import 'package:ebook_app/features/home/data/repos/home_repo_implementation.dart';
@@ -22,8 +20,8 @@ class EbookApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => FeaturedBooksCubit(HomeRepoImplementation(ApiService(Dio())))),
-        BlocProvider(create: (context) => NewestBooksCubit(HomeRepoImplementation(ApiService(Dio())))),
+        BlocProvider(create: (context) => FeaturedBooksCubit(getIt.get<HomeRepoImplementation>())..fetchFeaturedBooks()),
+        BlocProvider(create: (context) => NewestBooksCubit(getIt.get<HomeRepoImplementation>())),
       ],
       child: MaterialApp.router(
         routerConfig: AppRouter.router,
