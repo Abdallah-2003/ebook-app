@@ -12,7 +12,7 @@ class BookRateing extends StatelessWidget {
 
   final MainAxisAlignment mainAxisAlignment;
   final String rating;
-  final int pageCount;
+  final num pageCount;
 
   @override
   Widget build(BuildContext context) {
