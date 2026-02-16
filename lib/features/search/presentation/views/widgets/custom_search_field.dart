@@ -11,10 +11,8 @@ class CustomSearchField extends StatelessWidget {
         suffixIcon: const Icon(Icons.search),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(
-            color: Colors.white
-          )
-        )
+          borderSide: const BorderSide(color: Colors.white),
+        ),
       ),
     );
   }

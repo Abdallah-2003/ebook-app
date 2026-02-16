@@ -13,42 +13,25 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: MediaQuery.of(context).size.width * 0.23
+            horizontal: MediaQuery.of(context).size.width * 0.23,
           ),
           child: const CustomBookItem(),
         ),
         const Padding(
-          padding: EdgeInsets.only(
-            top: 36,
-            bottom: 6
-          ),
-          child: Text(
-            'The Jungle Book',
-            style: Styles.textStyle30,
-          ),
+          padding: EdgeInsets.only(top: 36, bottom: 6),
+          child: Text('The Jungle Book', style: Styles.textStyle30),
         ),
         const Opacity(
           opacity: 0.7,
-          child: Text(
-            'Rudyard Kipling',
-            style: Styles.textStyle18,
-          ),
+          child: Text('Rudyard Kipling', style: Styles.textStyle18),
         ),
         const Padding(
-          padding: EdgeInsets.only(
-            top: 6
-          ),
-          child: BookRateing(
-            mainAxisAlignment: MainAxisAlignment.center,
-          ),
+          padding: EdgeInsets.only(top: 6),
+          child: BookRateing(mainAxisAlignment: MainAxisAlignment.center),
         ),
-        const SizedBox(
-          height: 37,
-        ),
+        const SizedBox(height: 37),
         const BookAction(),
-        const SizedBox(
-          height: 37,
-        ),
+        const SizedBox(height: 37),
       ],
     );
   }

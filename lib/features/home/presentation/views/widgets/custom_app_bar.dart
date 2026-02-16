@@ -10,19 +10,14 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Image.asset(AssetsData.logo,
-          height: 40,
-        ),
+        Image.asset(AssetsData.logo, height: 40),
         const Spacer(),
         GestureDetector(
           onTap: () {
             context.go(AppRouter.kSearchView);
           },
-          child: const Icon(
-            Icons.search,
-            size: 30,
-          ),
-        )
+          child: const Icon(Icons.search, size: 30),
+        ),
       ],
     );
   }

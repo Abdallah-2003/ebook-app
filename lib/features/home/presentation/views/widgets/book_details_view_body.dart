@@ -18,12 +18,12 @@ class BookDetailsViewBody extends StatelessWidget {
               children: [
                 CustomBookDetailsViewAppbar(),
                 BookDetailsSection(),
-                FeaturedBookSection()
+                FeaturedBookSection(),
               ],
             ),
           ),
-        )
-      ]
+        ),
+      ],
     );
   }
 }

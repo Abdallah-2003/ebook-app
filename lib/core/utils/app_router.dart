@@ -5,7 +5,6 @@ import 'package:ebook_app/features/spalsh/presentation/views/splash_view.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
-
   static const kHomeView = '/homeView';
   static const kbookDetailsView = '/bookDetailsView';
   static const kSearchView = '/SearchView';
@@ -36,6 +35,6 @@ abstract class AppRouter {
           return const SearchView();
         },
       ),
-    ]
-  );  
+    ],
+  );
 }

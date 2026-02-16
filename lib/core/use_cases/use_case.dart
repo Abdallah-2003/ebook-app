@@ -2,9 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:ebook_app/core/errors/failure.dart';
 
 abstract class UseCase<T, Param> {
-
   Future<Either<Failure, T>> call([Param param]);
-
 }
 
-class NoParam{}
+class NoParam {}

@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BookRateing extends StatelessWidget {
-  const BookRateing({super.key, this.mainAxisAlignment = MainAxisAlignment.start});
+  const BookRateing({
+    super.key,
+    this.mainAxisAlignment = MainAxisAlignment.start,
+  });
 
   final MainAxisAlignment mainAxisAlignment;
 
@@ -13,22 +16,9 @@ class BookRateing extends StatelessWidget {
       mainAxisAlignment: mainAxisAlignment,
       spacing: 6.3,
       children: const [
-         Icon(
-          FontAwesomeIcons.solidStar,
-          color: Color(0xffFFDD4F),
-          size: 16,
-        ),
-         Text(
-          '4.8',
-          style: Styles.textStyle16,
-        ),
-        Opacity(
-          opacity: 0.7,
-          child: Text(
-            '(4564)',
-            style: Styles.textStyle14
-          ),
-        )
+        Icon(FontAwesomeIcons.solidStar, color: Color(0xffFFDD4F), size: 16),
+        Text('4.8', style: Styles.textStyle16),
+        Opacity(opacity: 0.7, child: Text('(4564)', style: Styles.textStyle14)),
       ],
     );
   }

@@ -7,19 +7,13 @@ import 'package:ebook_app/features/home/domain/repos/home_repo.dart';
 // add permission
 // use case enable applying single responsibility principle as if you want to add a permission you can add here not in fetchFeaturedBooks() method
 
-class FetchFeaturedBooksUseCase extends UseCase<List<BookEntity>, NoParam>{
-
+class FetchFeaturedBooksUseCase extends UseCase<List<BookEntity>, NoParam> {
   final HomeRepo homeRepo;
 
   FetchFeaturedBooksUseCase(this.homeRepo);
-  
+
   @override
   Future<Either<Failure, List<BookEntity>>> call([NoParam? param]) async {
     return await homeRepo.fetchFeaturedBooks();
   }
 }
-
-  
-
-
-
