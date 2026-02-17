@@ -1,4 +1,6 @@
+import 'package:ebook_app/constant.dart';
 import 'package:ebook_app/core/utils/api_sevice.dart';
+import 'package:ebook_app/core/utils/functions/save_books_data.dart';
 import 'package:ebook_app/features/home/data/models/book_model/book_model.dart';
 import 'package:ebook_app/features/home/domain/entities/book_entity.dart';
 
@@ -21,9 +23,12 @@ class HomeRemoteDataSourceImplementation extends HomeRemoteDataSource {
     final data = await apiSevice.get(endPoint: 'volumes?q=programming&Filtering=free-ebooks');
 
     final List<BookEntity> books = getBooks(data);
+    saveBooksData(books, kFeaturedBox);
 
     return books;
   }
+
+ 
 
   
 
