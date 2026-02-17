@@ -1,12 +1,12 @@
 class BookEntity {
-  final String image, title, author;
+  final String? image, title, author;
   final num price, rating;
 
-  const BookEntity(
-    this.image,
-    this.title,
-    this.author,
-    this.price,
-    this.rating,
-  );
+  const BookEntity({
+    required this.image,
+    required this.title,
+    required this.author,
+    required this.price,
+    required this.rating, 
+});
 }

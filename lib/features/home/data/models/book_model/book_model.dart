@@ -2,8 +2,9 @@ import 'package:ebook_app/features/home/data/models/book_model/access_info.dart'
 import 'package:ebook_app/features/home/data/models/book_model/sale_info.dart';
 import 'package:ebook_app/features/home/data/models/book_model/search_info.dart';
 import 'package:ebook_app/features/home/data/models/book_model/volume_info.dart';
+import 'package:ebook_app/features/home/domain/entities/book_entity.dart';
 
-class BookModel {
+class BookModel extends BookEntity {
   String? kind;
   String? id;
   String? etag;
@@ -14,15 +15,21 @@ class BookModel {
   SearchInfo? searchInfo;
 
   BookModel({
+    this.volumeInfo,
     this.kind,
     this.id,
     this.etag,
     this.selfLink,
-    this.volumeInfo,
     this.saleInfo,
     this.accessInfo,
     this.searchInfo,
-  });
+  }) : super(
+         image: volumeInfo!.imageLinks!.thumbnail ?? '',
+         title: volumeInfo.title,
+         author: volumeInfo.authors!.first,
+         price: 0.0,
+         rating: 0.0,
+       );
 
   factory BookModel.fromJson(Map<String, dynamic> json) => BookModel(
     kind: json['kind'] as String?,
