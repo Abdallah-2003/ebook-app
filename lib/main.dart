@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive/hive.dart';
 
-void main() {
+void main() async {
   Hive.registerAdapter(BookEntityAdapter());
-  Hive.openBox(kFeaturedBox);
+  await Hive.openBox(kFeaturedBox);
   runApp(const EbookApp());
 }
 
