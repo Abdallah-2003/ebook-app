@@ -1,3 +1,5 @@
+import 'package:ebook_app/core/utils/api_sevice.dart';
+import 'package:ebook_app/features/home/data/models/book_model/book_model.dart';
 import 'package:ebook_app/features/home/domain/entities/book_entity.dart';
 
 abstract class HomeRemoteDataSource {
@@ -8,14 +10,36 @@ abstract class HomeRemoteDataSource {
 
 
 class HomeRemoteDataSourceImplementation extends HomeRemoteDataSource {
+
+  final ApiSevice apiSevice;
+
+  HomeRemoteDataSourceImplementation(this.apiSevice);
+
   @override
-  Future<List<BookEntity>> fetchFeaturedBooks() {
-    throw UnimplementedError();
+  Future<List<BookEntity>> fetchFeaturedBooks() async {
+    
+    final data = await apiSevice.get(endPoint: 'volumes?q=programming&Filtering=free-ebooks');
+
+    final List<BookEntity> books = getBooks(data);
+
+    return books;
   }
+
+  
 
   @override
   Future<List<BookEntity>> fetchNewestBooks() {
     throw UnimplementedError();
+  }
+
+
+  List<BookEntity> getBooks(Map<String, dynamic> data) {
+    final List<BookEntity> books = [];
+    
+    for (final element in data['items']) {
+      books.add(BookModel.fromJson(element));
+    }
+    return books;
   }
 
 
