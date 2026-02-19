@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 import 'package:ebook_app/core/errors/failure.dart';
 import 'package:ebook_app/features/home/data/data_sources/home_local_data_source.dart';
 import 'package:ebook_app/features/home/data/data_sources/home_remote_data_source.dart';
@@ -25,7 +26,10 @@ class HomeRepoImplementation extends HomeRepo {
       books = await homeRemoteDataSource.fetchFeaturedBooks();
       return right(books);
     } on Exception catch (e) {
-      return left(Failure(errMessage: e.toString()));
+      if (e is DioException) {
+        return Left(ServerFailure.fromDioError(e));
+      }
+      return Left(ServerFailure(errMessage: e.toString()));
     }
   }
 
@@ -41,7 +45,10 @@ class HomeRepoImplementation extends HomeRepo {
       books = await homeRemoteDataSource.fetchNewestBooks();
       return right(books);
     } on Exception catch (e) {
-      return left(Failure(errMessage: e.toString()));
+      if (e is DioException) {
+        return Left(ServerFailure.fromDioError(e));
+      }
+      return Left(ServerFailure(errMessage: e.toString()));
     }
   }
 }
